@@ -28,5 +28,7 @@ Le client tape un code
             Le programme s'arrête|
         Lancer la demande du code de la carte
     SINON
-        Le code est correct 
-        Lancer la demande du montant à retirer 
+      Le code est correct 
+      Lancer la demande du montant à retirer 
+      Le distributeur affiche un message "demandant le code de la carte"
+      Le client tape son code 

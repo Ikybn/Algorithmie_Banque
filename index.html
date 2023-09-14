@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app"></div>
+    <script>
+              // Variables
+              const clientBalance = 1200;
+              const atmBalance = 1200;
+              const passCard = 9513;
+              let card = parseInt(prompt('Choisissez une carte : 1, 2 ou 3'))
+            const app = document.querySelector(".app")
+
+              // Functions
+              /*
+              // Type de cartes de l'app :
+              1 : CB Valide
+              2 : CB Bloquée
+              3 : CB Non valide
+              */
+
+              function cardChecker(){
+                //if(isNaN(card) && isNaN(card)) {//
+                    if(card===2) && (card#1)
+                    if (card === 2){
+                        app.innerText=`CB Bloquée`
+                    
+                }else {
+                          app.innerText=`CB Non valide`
+                }
+            }
+                else {
+                    passChecker()
+                }
+            }
+            /*Cette fonction permet de vérifier le code de la carte :
+            *A l'aide d'une boucle nous allons permettre 3 essais
+            *au maximum afin de l'arreter et on lance la fonction pour 
+            *choisir le montant à retirer.
+            */
+
+            function passChecker(){
+
+                app.innerText=`CB Valide`
+                for (let index = 0; index < 3 ; index++) {
+                    let passPrompt = parseInt(prompt('Saisissez votre code'))
+                    if (passPrompt === passCard){
+                        index = 3 
+                        amountChoice()
+                    } 
+                }
+              }
+
+              function amontChoice(){
+                app.innerText = 'Combien voulez-vous retirer ?'
+
+
+              }
+
+              // App
+              cardChecker()
+
+    </script>
+  </body>
+</html>
