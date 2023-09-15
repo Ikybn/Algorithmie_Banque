@@ -4,11 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+    <title>DAB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
 
-  <body>
-    <div class="app"></div>
+<body>
+    <header class="container">
+        <h1 align="center">Retrait DAB</h1>
+        <p align="center">
+            Veuillez cliquer sur le bouton ci-dessous pour retirer de l'argent
+        </p>
+        <button onclick="cardChecker()">Commencer</button>
+    </header>
+    <main class="container">
+        <h1 class="app"></h1>
+    </main>
 
     <script>
               // Variables
@@ -56,7 +66,16 @@
 
               function amontChoice(){
                 app.innerText = 'Combien voulez-vous retirer ?'
-
+                let amount = parseInt(prompt('Choisissez un montant : 20,50,100,200,500,1000'))
+                if (amount > clientBalance) {
+                    app.innerText = 'Solde insuffisant'
+                } else {
+                   if (amount > atmBalance) {
+                    app.innerText = 'Solde du DAB insuffisant'
+                } else {
+                    app.innerText = 'Retrait de ' + amount + '€'
+                }
+            } 
 
               }
 

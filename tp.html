@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container">
+        <h1 align="center">Inscription Prépavenir</h1>
+        <p align="center">
+            Veuillez cliquer sur le bouton vous inscrire
+        </p>
+        <button>Inscription</button>
+    </header>
+    <main class="container">
+        <h1 class="app"></h1>
+    </main>
+    <script>
+
+    function IsNotEmpty() {
+        if (value == null || typeof value == 'Not defined')
+            if (value == null){
+                app.innerText = 'Vous devez remplir les champs'
+            }
+            else {
+                app.innerText = 'Case non renseignée'
+            }
+        
+        else {
+            app.innerText = 'Inscription validée'
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+        // Variables
+  const clientBalance = 1200;
+  const atmBalance = 1200;
+  const passCard = 9513;
+  //let card = parseInt(prompt('Choisissez une carte : 1, 2 ou 3'))
+  const app = document.querySelector(".app")
+
+  // Functions
+  /*
+      Type de cartes de l'app :
+      1 : CB Valide
+      2 : CB Bloquée
+      3 : CB Non valide
+  */
+
+  // Tout ce qui n'est pas un nombre et qui est au dessus de 3 
+        function cardChecker(){
+          
+
+          if(card === 2 || card != 1)
+              if (card === 2){
+                  app.innerText = `CB Bloquée`
+              } else {
+                    app.innerText=`CB Non valide`
+          }
+   
+      else {
+              passChecker()
+          }
+      }
+
+      function passChecker(){
+          app.innerText=`CB Valide`
+          for (let index = 0; index < 3 ; index++) {
+              let passPrompt = parseInt(prompt('Saisissez votre code'))
+              if (passPrompt === passCard) {
+                  index = 3 
+                  amountChoice()
+              } 
+          }
+          console.log(box)
+        }
+
+        function amontChoice(){
+          app.innerText = 'Combien voulez-vous retirer ?'
+          let amount = parseInt(prompt('Choisissez un montant : 20,50,100,200,500,1000'))
+          if (amount > clientBalance) {
+              app.innerText = 'Solde insuffisant'
+          } else {
+             if (amount > atmBalance) {
+              app.innerText = 'Solde du DAB insuffisant'
+          } else {
+              app.innerText = 'Retrait de ' + amount + '€'
+          }
+      } 
+
+        }
+
+        // App
+        passChecker()
+
+</body>
+</html>
